@@ -31,8 +31,10 @@ struct EngineeringProbeRow: View {
     @ObservedObject var probe: Probe
     
     @AppStorage("displayCelsius") private var displayCelsius = true
-
+    @State var liveActivityText = "Start Live Activity"
+    @State var liveActivityStarted = false
     var body: some View {
+        
         VStack {
             HStack {
                 Text(displayCelsius ? "°C" : "°F")
@@ -44,7 +46,17 @@ struct EngineeringProbeRow: View {
                 
                 Spacer()
             }
-            
+            Text(liveActivityText).font(.headline).tint(.blue).onTapGesture {  
+                if (liveActivityStarted == true){
+                    liveActivityStarted = false
+                    stopLiveActivity(probe.serialNumber)
+                    liveActivityText = "Start Live Activity"
+                }else{
+                    liveActivityStarted = true
+                    startLiveActivity(probe.serialNumber)
+                    liveActivityText = "Stop Live Activity"
+                }
+            }
             HStack {
                 Spacer()
                 
@@ -85,6 +97,7 @@ struct EngineeringProbeRow: View {
             .padding(4)
             
             Row(title: "Battery status", value: "\(probe.batteryStatus)")
+           
         }
     }
     

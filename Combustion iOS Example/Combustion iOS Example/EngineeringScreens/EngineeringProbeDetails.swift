@@ -30,7 +30,7 @@ import CombustionBLE
 struct EngineeringProbeDetails: View {
     @ObservedObject var probe: Probe
     
-    @AppStorage("displayCelsius") private var displayCelsius = true
+    @AppStorage("displayCelsius") private var displayCelsius = false
     
     @State private var showingSetPrediction = false
     @State private var showingFirmwareUpgrade = false
@@ -220,6 +220,7 @@ struct EngineeringProbeDetails: View {
                     
                     Text(temperatureString(valueCelsius: probe.instantReadTemperature ))
                         .font(.system(size: 32))
+                        .fontWeight(.heavy)
                     
                     Spacer()
                 }
@@ -236,6 +237,7 @@ struct EngineeringProbeDetails: View {
                         Text("Core")
                         if let virutalTemps = probe.virtualTemperatures {
                             Text(temperatureString(valueCelsius: virutalTemps.coreTemperature))
+                                .fontWeight(.bold)
                         }
                         else {
                             Text("--")
@@ -248,6 +250,7 @@ struct EngineeringProbeDetails: View {
                         Text("Surface")
                         if let virutalTemps = probe.virtualTemperatures {
                             Text(temperatureString(valueCelsius: virutalTemps.surfaceTemperature))
+                                .fontWeight(.bold)
                         }
                         else {
                             Text("--")
@@ -260,6 +263,7 @@ struct EngineeringProbeDetails: View {
                         Text("Ambient")
                         if let virutalTemps = probe.virtualTemperatures {
                             Text(temperatureString(valueCelsius: virutalTemps.ambientTemperature))
+                                .fontWeight(.bold)
                         }
                         else {
                             Text("--")

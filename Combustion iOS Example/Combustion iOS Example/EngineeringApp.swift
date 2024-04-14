@@ -25,7 +25,87 @@ SOFTWARE.
 --*/
 
 import SwiftUI
+import ActivityKit
+import Combine
+import CombustionBLE
 
+func contentStateForProbe(_ probe: Probe) -> CombustionWidgetAttributes.ContentState {
+    @AppStorage("displayCelsius") var displayCelsius = false
+    return CombustionWidgetAttributes.ContentState(
+        probeName: probe.name,
+        probeSerial: probe.serialNumber,
+        lastUpdateTime: probe.lastStatusNotificationTime,
+        coreTemp: displayCelsius ? probe.virtualTemperatures!.coreTemperature : fahrenheit(celsius: probe.virtualTemperatures!.coreTemperature),
+        ambientTemp: displayCelsius ? probe.virtualTemperatures!.ambientTemperature : fahrenheit(celsius:probe.virtualTemperatures!.ambientTemperature) ,
+        surfaceTemp: displayCelsius ? probe.virtualTemperatures!.surfaceTemperature :  fahrenheit(celsius:probe.virtualTemperatures!.surfaceTemperature),
+        timeRemaining: (probe.hasActivePrediction && probe.predictionInfo != nil && probe.predictionInfo!.secondsRemaining != nil  ?  probe.predictionInfo!.secondsRemaining : 0)!,
+        progressPercent: probe.hasActivePrediction && probe.predictionInfo != nil ? probe.predictionInfo!.percentThroughCook : 0,
+        timeElapsed: probe.temperatureLogs.last != nil && probe.temperatureLogs.last!.startTime != nil ? probe.temperatureLogs.last!.startTime!.timeIntervalSinceNow * -1 : 0
+    )
+}
+
+func stopLiveActivity(_ probeSerial: UInt32){
+    let targetLiveActivity = Activity<CombustionWidgetAttributes>.activities.first { activity in
+        activity.content.state.probeSerial == probeSerial
+    };
+    let probe = DeviceManager.shared.getProbes().first { probe in
+        probe.serialNumber == probeSerial;
+    }
+    if (targetLiveActivity != nil && probe != nil){
+        let state = contentStateForProbe(probe!)
+
+        Task {
+            let content = ActivityContent(state: state, staleDate: .now)
+            await targetLiveActivity?.end(content, dismissalPolicy: .immediate)
+        }
+    }
+}
+func startLiveActivity(_ probeSerial: UInt32) {
+    let deviceManager = DeviceManager.shared
+    let probeAttributes = CombustionWidgetAttributes(name: "Probe")
+    let probe = deviceManager.getProbes().first { probe in
+        probe.serialNumber == probeSerial
+    }
+    if (probe != nil){
+        Task {
+            do {
+                let liveActivity = try Activity<CombustionWidgetAttributes>.request(
+                    attributes: probeAttributes,
+                    content: ActivityContent(state: contentStateForProbe(probe!), staleDate: Date.now + 1),
+                    pushType: nil)
+                print("Requested a Probe Live Activity \(liveActivity.id)")
+                @AppStorage("displayCelsius") var displayCelsius = false
+                try await scheduleLiveActivityUpdate(after: 5, displayCelsius: displayCelsius, probe: probe!, liveActivityId: liveActivity.id)
+            } catch (let error) {
+                print("Error requesting probe delivery Live Activity \(error.localizedDescription)")
+            }
+        }
+    }
+    @Sendable func scheduleLiveActivityUpdate(after seconds: UInt64, displayCelsius: Bool, probe: Probe, liveActivityId: String) async throws {
+        print("Scheduled a Probe Live Activity")
+        try await Task.sleep(nanoseconds: seconds * 1_000_000_000)
+        Task {
+            let currentLiveActivity = Activity<CombustionWidgetAttributes>.activities.first { activity in
+                activity.id == liveActivityId
+            };
+            if (currentLiveActivity != nil){
+                await currentLiveActivity!.update(
+                    ActivityContent<CombustionWidgetAttributes.ContentState>(
+                        state: contentStateForProbe(probe),
+                        staleDate: Date.now + 1,
+                        relevanceScore: 100
+                    )
+                )
+                // Schedule the next update for 5 seconds
+                // TODO: Move the update time to a configurable setting
+                Task {
+                    @AppStorage("displayCelsius") var displayCelsius = false
+                    try await scheduleLiveActivityUpdate(after: 5, displayCelsius: displayCelsius, probe: probe, liveActivityId: liveActivityId)
+                }
+            }
+        }
+    }
+}
 @main
 struct EngineeringApp: App {
     var body: some Scene {

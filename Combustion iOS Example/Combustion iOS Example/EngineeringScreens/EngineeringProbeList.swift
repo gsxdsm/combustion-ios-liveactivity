@@ -26,6 +26,9 @@ SOFTWARE.
 
 import SwiftUI
 import CombustionBLE
+import ActivityKit
+import Combine
+
 
 struct EngineeringProbeList: View {
     @ObservedObject var deviceManager = DeviceManager.shared
@@ -34,10 +37,10 @@ struct EngineeringProbeList: View {
         // Initialize bluetooth
         DeviceManager.shared.initBluetooth()
         
-        
+        deviceManager.enableMeatNet()
         // This code can be used to create Simulated probes
         // which allow for UI testing without devices
-        
+        //Note - live activity update won't work with simulated probes - only BLE probes
         //deviceManager.addSimulatedProbe()
         //deviceManager.addSimulatedProbe()
         //deviceManager.addSimulatedProbe()
@@ -45,18 +48,29 @@ struct EngineeringProbeList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(deviceManager.getProbes(), id: \.self) { probe in
-                    NavigationLink(destination: EngineeringProbeDetails(probe: probe)) {
-                        EngineeringProbeRow(probe: probe)
+            VStack{
+                HStack {
+                    Spacer()
+                    NavigationLink {
+                        SettingsScreen()
+                    } label: {
+                        Text("Settings").font(.headline)
+                    }
+                }.frame(height: 45).tint(.blue).padding()
+                List {
+                    ForEach(deviceManager.getProbes(), id: \.self) { probe in
+                        NavigationLink(destination: EngineeringProbeDetails(probe: probe)) {
+                            EngineeringProbeRow(probe: probe)
+                        }
                     }
                 }
-            }
-            .navigationTitle("Probes")
+            }.navigationTitle("Probes")
         }
     }
+    
+     
 }
- 
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

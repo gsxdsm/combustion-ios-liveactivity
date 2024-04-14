@@ -13,7 +13,17 @@
 		539BF839276282D5005E2EFF /* EngineeringProbeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BF836276282D5005E2EFF /* EngineeringProbeList.swift */; };
 		539BF83A276282D5005E2EFF /* EngineeringProbeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BF837276282D5005E2EFF /* EngineeringProbeRow.swift */; };
 		539BF83C276282EC005E2EFF /* EngineeringApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539BF83B276282EC005E2EFF /* EngineeringApp.swift */; };
-		539BF8482763D0E0005E2EFF /* CombustionBLE in Frameworks */ = {isa = PBXBuildFile; productRef = 539BF8472763D0E0005E2EFF /* CombustionBLE */; };
+		B32F91CC2B9963CC00684DDB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F91CB2B9963CC00684DDB /* WidgetKit.framework */; };
+		B32F91CE2B9963CC00684DDB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32F91CD2B9963CC00684DDB /* SwiftUI.framework */; };
+		B32F91DD2B9963CD00684DDB /* CombustionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B32F91C92B9963CC00684DDB /* CombustionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B32F91E32B99670900684DDB /* ActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32F91E22B99670900684DDB /* ActivityAttributes.swift */; };
+		B32F91F02B996AC500684DDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32F91EA2B996AC500684DDB /* Assets.xcassets */; };
+		B32F91F32B996AC500684DDB /* CombustionWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32F91ED2B996AC500684DDB /* CombustionWidgetBundle.swift */; };
+		B32F91F42B996AC500684DDB /* CombustionWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32F91EE2B996AC500684DDB /* CombustionWidgetLiveActivity.swift */; };
+		B32F91F72B996BD200684DDB /* ActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32F91E22B99670900684DDB /* ActivityAttributes.swift */; };
+		B38404C22BCB8FA6005ECD06 /* CombustionBLE in Frameworks */ = {isa = PBXBuildFile; productRef = B38404C12BCB8FA6005ECD06 /* CombustionBLE */; };
+		B3C6A0DD2BA5505400A0C19D /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = B3C6A0DC2BA5505400A0C19D /* OrderedCollections */; };
+		B3E2FFF82B9C32E900110801 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E2FFF72B9C32E900110801 /* SettingsScreen.swift */; };
 		F51C9749286D1B67006CDCB4 /* FirmwareUpgradeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C9748286D1B67006CDCB4 /* FirmwareUpgradeScreen.swift */; };
 		F538695E28EBA9DD00AFBEDB /* SetPredictionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F538695D28EBA9DD00AFBEDB /* SetPredictionScreen.swift */; };
 		F5409CB028EE3C2300469E6A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5409CAF28EE3C2300469E6A /* Row.swift */; };
@@ -24,6 +34,30 @@
 		F5CC25E8286FBFA5003C80B2 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CC25E7286FBFA5003C80B2 /* DocumentPicker.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B32F91DB2B9963CD00684DDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 539BF81B2762819F005E2EFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B32F91C82B9963CC00684DDB;
+			remoteInfo = CombustionWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B32F91DE2B9963CD00684DDB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B32F91DD2B9963CD00684DDB /* CombustionWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		539BF8232762819F005E2EFF /* Combustion iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combustion iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		539BF82A276281A0005E2EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +67,17 @@
 		539BF837276282D5005E2EFF /* EngineeringProbeRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineeringProbeRow.swift; sourceTree = "<group>"; };
 		539BF83B276282EC005E2EFF /* EngineeringApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineeringApp.swift; sourceTree = "<group>"; };
 		539BF8432762B226005E2EFF /* Combustion-iOS-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Combustion-iOS-Example-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B32F91C92B9963CC00684DDB /* CombustionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CombustionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32F91CB2B9963CC00684DDB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B32F91CD2B9963CC00684DDB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B32F91E22B99670900684DDB /* ActivityAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityAttributes.swift; sourceTree = "<group>"; };
+		B32F91EA2B996AC500684DDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B32F91ED2B996AC500684DDB /* CombustionWidgetBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombustionWidgetBundle.swift; sourceTree = "<group>"; };
+		B32F91EE2B996AC500684DDB /* CombustionWidgetLiveActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombustionWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		B32F91EF2B996AC500684DDB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B38404C32BCB9535005ECD06 /* CombustionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CombustionWidgetExtension.entitlements; path = "Combustion iOS Example/CombustionWidgetExtension.entitlements"; sourceTree = "<group>"; };
+		B3E2FFF72B9C32E900110801 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		B3FAE51B2B9FF2AC00B06069 /* Combustion iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Combustion iOS Example.entitlements"; sourceTree = "<group>"; };
 		F51C9748286D1B67006CDCB4 /* FirmwareUpgradeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareUpgradeScreen.swift; sourceTree = "<group>"; };
 		F538695D28EBA9DD00AFBEDB /* SetPredictionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPredictionScreen.swift; sourceTree = "<group>"; };
 		F5409CAF28EE3C2300469E6A /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
@@ -47,8 +92,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				539BF8482763D0E0005E2EFF /* CombustionBLE in Frameworks */,
+				B3C6A0DD2BA5505400A0C19D /* OrderedCollections in Frameworks */,
 				F576516428F0943B009F7A78 /* Charts in Frameworks */,
+				B38404C22BCB8FA6005ECD06 /* CombustionBLE in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B32F91C62B9963CC00684DDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32F91CE2B9963CC00684DDB /* SwiftUI.framework in Frameworks */,
+				B32F91CC2B9963CC00684DDB /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +113,10 @@
 		539BF81A2762819F005E2EFF = {
 			isa = PBXGroup;
 			children = (
+				B38404C32BCB9535005ECD06 /* CombustionWidgetExtension.entitlements */,
+				B32F91E92B996AC500684DDB /* CombustionWidget */,
 				539BF8252762819F005E2EFF /* Combustion iOS Example */,
+				B32F91CA2B9963CC00684DDB /* Frameworks */,
 				539BF8242762819F005E2EFF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				539BF8232762819F005E2EFF /* Combustion iOS Example.app */,
+				B32F91C92B9963CC00684DDB /* CombustionWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,9 +133,11 @@
 		539BF8252762819F005E2EFF /* Combustion iOS Example */ = {
 			isa = PBXGroup;
 			children = (
+				B3FAE51B2B9FF2AC00B06069 /* Combustion iOS Example.entitlements */,
 				539BF8432762B226005E2EFF /* Combustion-iOS-Example-Info.plist */,
 				539BF834276282C4005E2EFF /* EngineeringScreens */,
 				539BF83B276282EC005E2EFF /* EngineeringApp.swift */,
+				B32F91E22B99670900684DDB /* ActivityAttributes.swift */,
 				539BF82A276281A0005E2EFF /* Assets.xcassets */,
 				539BF82C276281A0005E2EFF /* Preview Content */,
 				F576516528F09487009F7A78 /* ChartData.swift */,
@@ -104,8 +165,30 @@
 				F538695D28EBA9DD00AFBEDB /* SetPredictionScreen.swift */,
 				F5409CAF28EE3C2300469E6A /* Row.swift */,
 				F576516728F094C6009F7A78 /* ChartView.swift */,
+				B3E2FFF72B9C32E900110801 /* SettingsScreen.swift */,
 			);
 			path = EngineeringScreens;
+			sourceTree = "<group>";
+		};
+		B32F91CA2B9963CC00684DDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B32F91CB2B9963CC00684DDB /* WidgetKit.framework */,
+				B32F91CD2B9963CC00684DDB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B32F91E92B996AC500684DDB /* CombustionWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B32F91EA2B996AC500684DDB /* Assets.xcassets */,
+				B32F91ED2B996AC500684DDB /* CombustionWidgetBundle.swift */,
+				B32F91EE2B996AC500684DDB /* CombustionWidgetLiveActivity.swift */,
+				B32F91EF2B996AC500684DDB /* Info.plist */,
+			);
+			name = CombustionWidget;
+			path = "Combustion iOS Example/CombustionWidget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,19 +201,39 @@
 				539BF81F2762819F005E2EFF /* Sources */,
 				539BF8202762819F005E2EFF /* Frameworks */,
 				539BF8212762819F005E2EFF /* Resources */,
+				B32F91DE2B9963CD00684DDB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B32F91DC2B9963CD00684DDB /* PBXTargetDependency */,
+			);
+			name = "Combustion iOS Example";
+			packageProductDependencies = (
+				F576516328F0943B009F7A78 /* Charts */,
+				B3C6A0DC2BA5505400A0C19D /* OrderedCollections */,
+				B38404C12BCB8FA6005ECD06 /* CombustionBLE */,
+			);
+			productName = "Combustion iOS Example";
+			productReference = 539BF8232762819F005E2EFF /* Combustion iOS Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B32F91C82B9963CC00684DDB /* CombustionWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B32F91E12B9963CD00684DDB /* Build configuration list for PBXNativeTarget "CombustionWidgetExtension" */;
+			buildPhases = (
+				B32F91C52B9963CC00684DDB /* Sources */,
+				B32F91C62B9963CC00684DDB /* Frameworks */,
+				B32F91C72B9963CC00684DDB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Combustion iOS Example";
-			packageProductDependencies = (
-				539BF8472763D0E0005E2EFF /* CombustionBLE */,
-				F576516328F0943B009F7A78 /* Charts */,
-			);
-			productName = "Combustion iOS Example";
-			productReference = 539BF8232762819F005E2EFF /* Combustion iOS Example.app */;
-			productType = "com.apple.product-type.application";
+			name = CombustionWidgetExtension;
+			productName = CombustionWidgetExtension;
+			productReference = B32F91C92B9963CC00684DDB /* CombustionWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -139,12 +242,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1310;
-				LastUpgradeCheck = 1310;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					539BF8222762819F005E2EFF = {
 						CreatedOnToolsVersion = 13.1;
 						LastSwiftMigration = 1310;
+					};
+					B32F91C82B9963CC00684DDB = {
+						CreatedOnToolsVersion = 15.2;
 					};
 				};
 			};
@@ -158,14 +264,16 @@
 			);
 			mainGroup = 539BF81A2762819F005E2EFF;
 			packageReferences = (
-				539BF8462763D0E0005E2EFF /* XCRemoteSwiftPackageReference "combustion-ios-ble" */,
 				F576516228F0943B009F7A78 /* XCRemoteSwiftPackageReference "Charts" */,
+				B3C6A0DA2BA5503300A0C19D /* XCRemoteSwiftPackageReference "swift-collections" */,
+				B38404C02BCB8F82005ECD06 /* XCRemoteSwiftPackageReference "combustion-ios-ble" */,
 			);
 			productRefGroup = 539BF8242762819F005E2EFF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				539BF8222762819F005E2EFF /* Combustion iOS Example */,
+				B32F91C82B9963CC00684DDB /* CombustionWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +288,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B32F91C72B9963CC00684DDB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32F91F02B996AC500684DDB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -190,9 +306,11 @@
 				539BF83A276282D5005E2EFF /* EngineeringProbeRow.swift in Sources */,
 				F5409CB028EE3C2300469E6A /* Row.swift in Sources */,
 				F538695E28EBA9DD00AFBEDB /* SetPredictionScreen.swift in Sources */,
+				B32F91E32B99670900684DDB /* ActivityAttributes.swift in Sources */,
 				F5AE5AC42837F99D001D33A6 /* ShareSheet.swift in Sources */,
 				539BF839276282D5005E2EFF /* EngineeringProbeList.swift in Sources */,
 				F51C9749286D1B67006CDCB4 /* FirmwareUpgradeScreen.swift in Sources */,
+				B3E2FFF82B9C32E900110801 /* SettingsScreen.swift in Sources */,
 				F576516628F09487009F7A78 /* ChartData.swift in Sources */,
 				F576516828F094C6009F7A78 /* ChartView.swift in Sources */,
 				539BF838276282D5005E2EFF /* EngineeringProbeDetails.swift in Sources */,
@@ -201,7 +319,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B32F91C52B9963CC00684DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B32F91F72B996BD200684DDB /* ActivityAttributes.swift in Sources */,
+				B32F91F32B996AC500684DDB /* CombustionWidgetBundle.swift in Sources */,
+				B32F91F42B996AC500684DDB /* CombustionWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B32F91DC2B9963CD00684DDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B32F91C82B9963CC00684DDB /* CombustionWidgetExtension */;
+			targetProxy = B32F91DB2B9963CD00684DDB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		539BF82F276281A0005E2EFF /* Debug */ = {
@@ -255,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -310,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -323,30 +459,35 @@
 		539BF832276281A0005E2EFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Combustion iOS Example/Combustion iOS Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Combustion iOS Example/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6A5DP22787;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Combustion-iOS-Example-Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is used to communicate with hardware products.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is used to communicate with hardware products.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Allows user to read temperature probe data across the network";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = inc.combustion.Engineering;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsxdsm.combustion.Engineering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -358,31 +499,113 @@
 		539BF833276281A0005E2EFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Combustion iOS Example/Combustion iOS Example.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Combustion iOS Example/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6A5DP22787;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Combustion-iOS-Example-Info.plist";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is used to communicate with hardware products.";
 				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is used to communicate with hardware products.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Allows user to read temperature probe data across the network";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = inc.combustion.Engineering;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsxdsm.combustion.Engineering;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B32F91DF2B9963CD00684DDB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = CombustionWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6A5DP22787;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Combustion iOS Example/CombustionWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CombustionWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsxdsm.combustion.Engineering.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B32F91E02B9963CD00684DDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = CombustionWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6A5DP22787;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Combustion iOS Example/CombustionWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = CombustionWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gsxdsm.combustion.Engineering.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,15 +633,32 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B32F91E12B9963CD00684DDB /* Build configuration list for PBXNativeTarget "CombustionWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B32F91DF2B9963CD00684DDB /* Debug */,
+				B32F91E02B9963CD00684DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		539BF8462763D0E0005E2EFF /* XCRemoteSwiftPackageReference "combustion-ios-ble" */ = {
+		B38404C02BCB8F82005ECD06 /* XCRemoteSwiftPackageReference "combustion-ios-ble" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/combustion-inc/combustion-ios-ble";
+			repositoryURL = "https://github.com/combustion-inc/combustion-ios-ble.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		B3C6A0DA2BA5503300A0C19D /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 		F576516228F0943B009F7A78 /* XCRemoteSwiftPackageReference "Charts" */ = {
@@ -432,10 +672,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		539BF8472763D0E0005E2EFF /* CombustionBLE */ = {
+		B38404C12BCB8FA6005ECD06 /* CombustionBLE */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 539BF8462763D0E0005E2EFF /* XCRemoteSwiftPackageReference "combustion-ios-ble" */;
+			package = B38404C02BCB8F82005ECD06 /* XCRemoteSwiftPackageReference "combustion-ios-ble" */;
 			productName = CombustionBLE;
+		};
+		B3C6A0DC2BA5505400A0C19D /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3C6A0DA2BA5503300A0C19D /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 		F576516328F0943B009F7A78 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
